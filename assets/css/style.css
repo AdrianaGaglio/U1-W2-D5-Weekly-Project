@@ -6,33 +6,46 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.95em;
+  font-size: 1em;
 }
+
+/* common custom styles */
 
 .dark-bg {
   background-color: #222f3f;
 }
 
-.gray-bg {
+.grey-bg {
   background-color: #364759;
-  color: white;
+  padding-block: 0.5em;
+}
+
+.letter-spacing {
+  letter-spacing: -0.5px;
 }
 
 /* header */
 
 header div {
-  padding: 0.5em 2em;
+  padding-inline: 2em;
 }
 
-header img {
+/* logos */
+
+header .logo {
   height: 35px;
+  margin-block: 0.5em;
 }
 
-/* navigation */
+footer .logo {
+  height: 50px;
+  margin-block: 3em;
+}
 
-.main-nav li {
-  display: inline-block;
-  padding-right: 0.5em;
+/* footer */
+
+footer {
+  text-align: center;
 }
 
 /* headings */
@@ -56,16 +69,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1.45em;
+  font-size: 1.3em;
   font-weight: 500;
-}
-
-.main-categories h3 {
-  margin-bottom: 1em;
-}
-
-.categories h3 {
-  margin-top: 0.1em;
 }
 
 h4 {
@@ -73,24 +78,37 @@ h4 {
   font-size: 1.2em;
 }
 
-/* links */
+.main-categories h3 {
+  margin-bottom: 1em;
+}
+
+.special-categories h3 {
+  margin-top: 0.1em;
+}
+
+/* navigation & links */
+
 a {
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
-.shopLink {
-  color: #0a6570;
-  font-size: 0.7em;
-  font-weight: 700;
-  vertical-align: middle;
-  margin-left: 0.5em;
-  padding-inline: 0.5em;
-}
-
-footer a {
+.anchor {
   text-decoration: underline;
   font-weight: 700;
+}
+
+.shop-links {
+  font-size: 0.75em;
+  font-weight: 700;
+  color: #0a6570;
+  vertical-align: middle;
+  margin-left: 0.8em;
+}
+
+.main-nav li {
+  display: inline-block;
+  padding-right: 0.5em;
 }
 
 /* main */
@@ -100,11 +118,11 @@ main {
   padding: 2em;
 }
 
-main > div {
+section {
   margin-bottom: 2em;
 }
 
-.last-container {
+.last-section {
   margin-bottom: 0;
 }
 
@@ -132,38 +150,20 @@ main > div {
   padding-inline: 2em;
 }
 
-.featuredImg {
+.cards {
   width: 100%;
   height: 370px;
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 1px 2px 10px #0000006e;
+  box-shadow: 1.5px 0.5px 3px #00000040;
 }
 
-.categories {
+.special-categories {
   text-align: center;
 }
 
-.categories img {
+.special-categories img {
   width: 100%;
   max-height: 440px;
   object-fit: cover;
-}
-
-/* footer */
-
-footer {
-  text-align: center;
-}
-
-footer .gray-bg {
-  padding-block: 1em;
-}
-
-.logo-container {
-  padding-block: 4em;
-}
-
-footer img {
-  height: 50px;
 }
