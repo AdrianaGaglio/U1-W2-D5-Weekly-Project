@@ -96,8 +96,6 @@ a {
 .anchor {
   text-decoration: underline;
   font-weight: 700;
-  display: inline-block;
-  margin-block: 0.5em;
 }
 
 .shop-links {
@@ -120,11 +118,11 @@ main {
   padding: 2em;
 }
 
-section {
+main > div {
   margin-bottom: 2em;
 }
 
-.last-section {
+.last-container {
   margin-bottom: 0;
 }
 
