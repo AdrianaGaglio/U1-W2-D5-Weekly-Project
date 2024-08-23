@@ -57,9 +57,34 @@ const cars = [
   }
 ];
 
+const licensPlates = [];
+let randomPlate;
 for (i = 0; i < cars.length; i++) {
   const car = cars[i];
-  car.licensePlate = "AAA";
+
+  for (j = 0; j <= 21; j++) {
+    // EXTRA - Calcola randomicamente la targa
+    const allChar = "abcdefghilmnopqrstuvz".split("");
+    const randNum1 = Math.floor(Math.random() * 21);
+    const randNum2 = Math.floor(Math.random() * 21);
+    const randNum3 = Math.floor(Math.random() * 21);
+    const randNum4 = Math.floor(Math.random() * 21);
+    const randSingleNum1 = Math.floor(Math.random() * 10);
+    const randSingleNum2 = Math.floor(Math.random() * 10);
+    const randSingleNum3 = Math.floor(Math.random() * 10);
+    randomPlate =
+      allChar[randNum1].toUpperCase() +
+      allChar[randNum2].toUpperCase() +
+      " " +
+      randSingleNum1.toString() +
+      randSingleNum2.toString() +
+      randSingleNum3.toString() +
+      " " +
+      allChar[randNum3].toUpperCase() +
+      allChar[randNum4].toUpperCase();
+  }
+
+  car.licensePlate = randomPlate;
 }
 
 console.log("Added license plate for each car", cars);
