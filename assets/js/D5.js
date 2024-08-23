@@ -62,7 +62,7 @@ for (i = 0; i < cars.length; i++) {
   car.licensePlate = "AAA";
 }
 
-console.log(cars);
+console.log("Added license plate for each car", cars);
 
 /* ESERCIZIO 6
     Scrivi del codice per aggiungere un nuovo oggetto in ultima posizione nell'array "cars", rispettando la struttura degli altri elementi.
@@ -85,15 +85,40 @@ console.log("Updated cars by removing last trim for each one", cars);
 */
 const justTrims = [];
 
+for (i = 0; i < cars.length; i++) {
+  const clonedCars = cars.slice();
+  const clonedCar = clonedCars[i];
+  justTrims.push(clonedCar.trims.shift());
+}
+
+console.log("First trim for each car", justTrims);
+
 /* ESERCIZIO 8
     Cicla l'array "cars" e costruisci un if/else statament per mostrare due diversi messaggi in console. Se la prima lettera della proprietà
     "color" ha valore "b", mostra in console "Fizz". Altrimenti, mostra in console "Buzz".
 */
 
+for (i = 0; i < cars.length; i++) {
+  const carNameText = "Result for " + cars[i].brand + " " + cars[i].model + " is: ";
+  const carColor = cars[i].color.toLowerCase();
+  if (carColor.startsWith("b")) {
+    console.log(carNameText + "Fizz");
+  } else {
+    console.log(carNameText + "Buzz");
+  }
+}
+
 /* ESERCIZIO 9
     Utilizza un ciclo while per stampare in console i valori del seguente array numerico fino al raggiungimento del numero 32.
 */
 const numericArray = [6, 90, 45, 75, 84, 98, 35, 74, 31, 2, 8, 23, 100, 32, 66, 313, 321, 105];
+const indexOf32 = numericArray.indexOf(32);
+let counter = 0;
+
+while (counter <= indexOf32) {
+  console.log("Value at index " + counter + " --> " + numericArray[counter]);
+  counter++;
+}
 
 /* ESERCIZIO 10
     Partendo dall'array fornito e utilizzando un costrutto switch, genera un nuovo array composto dalle posizioni di ogni carattere all'interno
@@ -101,3 +126,20 @@ const numericArray = [6, 90, 45, 75, 84, 98, 35, 74, 31, 2, 8, 23, 100, 32, 66, 
     es. [f, b, e] --> [6, 2, 5]
 */
 const charactersArray = ["g", "n", "u", "z", "d"];
+
+const alphabet = "abcdefghilmnopqrstuvz";
+const alphabetCharactersArray = alphabet.split("");
+const numbers = [];
+
+for (i = 0; i < charactersArray.length; i++) {
+  const char = charactersArray[i];
+  for (j = 0; j < 21; j++) {
+    switch (true) {
+      case alphabetCharactersArray[j].includes(char):
+        numbers.push(alphabetCharactersArray.indexOf(char) + 1);
+        break;
+    }
+  }
+}
+
+console.log(numbers);
