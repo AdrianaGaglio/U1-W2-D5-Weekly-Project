@@ -33,6 +33,10 @@ console.log("Reversed pets names", pets.reverse());
     Scrivi del codice per spostare il primo elemento dall'array "pets" in ultima posizione.
 */
 
+console.log("Esercizio 4 - Prima", pets); // correzione --- aggiunto esercizio
+pets.push(pets.shift());
+console.log("Esercizio 4 - Dopo (sposto il primo elemento in ultima posizione)", pets);
+
 /* ESERCIZIO 5
     Dato il seguente array di oggetti, scrivi del codice per aggiungere ad ognuno di essi una proprietà "licensePlate" con valore a tua scelta.
 */
@@ -94,13 +98,14 @@ console.log("Added license plate for each car", cars);
     Successivamente, rimuovi l'ultimo elemento della proprietà "trims" da ogni auto.
 */
 
-cars.push(structuredClone(cars[cars.length - 1]));
-cars[cars.length - 1] = { brand: "Renault", model: "Captur", color: "orange", trims: ["titanium", "style"] };
+cars.push({ brand: "Renault", model: "Captur", color: "orange", trims: ["titanium", "style", "abc"] }); // correzione
+// cars[cars.length - 1] = { brand: "Renault", model: "Captur", color: "orange", trims: ["titanium", "style"] };
 console.log("Added a new element at the end of cars array", cars);
 
 for (i = 0; i < cars.length; i++) {
-  const car = cars[i];
-  car.trims.pop();
+  // const car = cars[i];
+  // car.trims.pop();
+  cars[i].trims.pop(); // correzione
 }
 
 console.log("Updated cars by removing last trim for each one", cars);
@@ -111,9 +116,9 @@ console.log("Updated cars by removing last trim for each one", cars);
 const justTrims = [];
 
 for (i = 0; i < cars.length; i++) {
-  const clonedCars = cars.slice();
-  const clonedCar = clonedCars[i];
-  justTrims.push(clonedCar.trims.shift());
+  // const clonedCars = cars.slice();
+  // const clonedCar = clonedCars[i];
+  justTrims.push(cars[i].trims.shift()); // correzione
 }
 
 console.log("First trim for each car", justTrims);
@@ -158,7 +163,9 @@ const numbers = [];
 
 for (i = 0; i < charactersArray.length; i++) {
   const char = charactersArray[i];
-  for (j = 0; j < 21; j++) {
+  // for (j = 0; j < 21; j++) {
+  for (j = 0; j < alphabet.length; j++) {
+    // correzione
     switch (true) {
       case alphabetCharactersArray[j].includes(char):
         numbers.push(alphabetCharactersArray.indexOf(char) + 1);
